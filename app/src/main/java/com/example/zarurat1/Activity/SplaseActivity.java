@@ -14,7 +14,7 @@ import com.example.zarurat1.R;
 
 public class SplaseActivity extends AppCompatActivity {
 
-    ImageView imageViewLogo;
+    ImageView imageViewLogo,loading;
     Drawable imageViewLogo1;
     AnimationDrawable animationDrawable;
 
@@ -24,14 +24,17 @@ public class SplaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splase);
 
         imageViewLogo = findViewById(R.id.imagelogo1);
+        loading = findViewById(R.id.loading);
 
         Animation animation= AnimationUtils.loadAnimation(this,R.anim.mytrans);
-        animationDrawable= (AnimationDrawable) imageViewLogo.getBackground();
+        Animation animationrotate= AnimationUtils.loadAnimation(this,R.anim.myrotate);
+       /* animationDrawable= (AnimationDrawable) imageViewLogo.getBackground();
         animationDrawable.setEnterFadeDuration(20);
         animationDrawable.setExitFadeDuration(20);
-        animationDrawable.start();
+        animationDrawable.start();*/
 
         imageViewLogo.setAnimation(animation);
+        loading.startAnimation(animationrotate);
 
         new Handler().postDelayed(new Runnable() {
             @Override
