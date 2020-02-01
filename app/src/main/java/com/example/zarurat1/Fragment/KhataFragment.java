@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.zarurat1.R;
 
 public class KhataFragment extends Fragment {
-    TextView textView;
+    TextView textView1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
