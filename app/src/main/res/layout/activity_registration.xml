@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6"
+    tools:context=".Activity.RegistrationActivity">
+
+    <ImageView
+        android:id="@+id/imagelogo2"
+        android:layout_alignParentTop="true"
+        android:layout_margin="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/logocopy" />
+
+    <LinearLayout
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/ic_control_point_black_24dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/colorWhite"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            android:textColorHint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@color/colorBlackTrans"
+                android:id="@+id/name"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:inputType="text"
+                android:hint="Name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            android:textColorHint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@color/colorBlackTrans"
+                android:id="@+id/Email"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            android:textColorHint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@color/colorBlackTrans"
+                android:id="@+id/mobile"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:inputType="number"
+                android:hint="Mobile No."
+                android:maxLength="10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            android:textColorHint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@color/colorBlackTrans"
+                android:id="@+id/dob"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:inputType="date"
+                android:hint="Date of Birth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            app:passwordToggleEnabled="true"
+            android:fontFamily="sans-serif-smallcaps"
+            app:passwordToggleTint="@color/colorBlack"
+            android:textColorHint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@color/colorBlackTrans"
+                android:id="@+id/pwd"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            app:passwordToggleEnabled="true"
+            android:fontFamily="sans-serif-smallcaps"
+            app:passwordToggleTint="@color/colorBlack"
+            android:textColorHint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@color/colorBlackTrans"
+                android:id="@+id/conpwd"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:inputType="textPassword"
+                android:hint="Confirm Password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.design.widget.TextInputLayout>
+        <Button
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:textSize="25sp"
+            android:id="@+id/buttonsignup"
+            android:text="Sign Up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlackTrans"
+            android:id="@+id/textClickReg"
+            android:text="Already have an Account ? Login Here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</RelativeLayout>

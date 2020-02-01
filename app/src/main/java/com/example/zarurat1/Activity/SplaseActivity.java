@@ -1,0 +1,45 @@
+package com.example.zarurat1.Activity;
+
+import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+
+import com.example.zarurat1.R;
+
+public class SplaseActivity extends AppCompatActivity {
+
+    ImageView imageViewLogo;
+    Drawable imageViewLogo1;
+    AnimationDrawable animationDrawable;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splase);
+
+        imageViewLogo = findViewById(R.id.imagelogo1);
+
+        Animation animation= AnimationUtils.loadAnimation(this,R.anim.mytrans);
+        animationDrawable= (AnimationDrawable) imageViewLogo.getBackground();
+        animationDrawable.setEnterFadeDuration(20);
+        animationDrawable.setExitFadeDuration(20);
+        animationDrawable.start();
+
+        imageViewLogo.setAnimation(animation);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent=new Intent(SplaseActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        },3000);
+    }
+}

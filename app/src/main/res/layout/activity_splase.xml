@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6"
+    tools:context=".Activity.SplaseActivity">
+
+    <ImageView
+        android:background="@drawable/logoanim"
+        android:padding="100dp"
+        android:id="@+id/imagelogo1"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:text="Zarurat"
+        android:layout_marginBottom="40dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
