@@ -10,11 +10,23 @@
 
     <ImageView
         android:id="@+id/imagelogo2"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="80dp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginLeft="-100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="80dp"
         android:src="@drawable/logocopy" />
+
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/imagelogo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back Login Here"/>
+
 
     <LinearLayout
         android:layout_below="@+id/imagelogo2"
@@ -27,6 +39,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/buttonUser"
             android:fontFamily="sans-serif-smallcaps"
             android:textColor="@color/colorWhite"
             android:background="@color/colorBlackTrans"
@@ -37,6 +50,7 @@
             android:layout_height="wrap_content"/>
 
         <Button
+            android:id="@+id/buttonServices"
             android:fontFamily="sans-serif-smallcaps"
             android:textColor="@color/colorWhite"
             android:background="@color/colorBlackTrans"
