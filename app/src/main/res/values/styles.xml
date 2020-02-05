@@ -10,6 +10,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.PrimaryColor" >
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
 
     <style name="AppTheme.FullScreen" parent="Theme.AppCompat.Light">
         <item name="android:fontFamily">sans-serif-smallcaps"</item>

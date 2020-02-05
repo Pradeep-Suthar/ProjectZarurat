@@ -9,9 +9,10 @@
     <com.google.android.flexbox.FlexboxLayout
         android:layout_width="match_parent"
         android:background="@android:color/white"
-        android:layout_height="?attr/actionBarSize">
+        android:layout_height="50dp">
 
     <FrameLayout
+        android:background="@color/colorPrimary"
         android:id="@+id/fragRecentNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,8 +21,9 @@
             android:id="@+id/tvrecent"
             android:layout_gravity="center"
             android:text="Recent"
-            android:textSize="15sp"
-            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/colorWhite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <View
@@ -32,6 +34,7 @@
     </FrameLayout>
 
     <FrameLayout
+        android:background="@color/colorPrimary"
         android:id="@+id/fragPersonalNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -40,8 +43,9 @@
             android:id="@+id/tvPersonal"
             android:layout_gravity="center"
             android:text="Personalize"
-            android:textSize="15sp"
-            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <View

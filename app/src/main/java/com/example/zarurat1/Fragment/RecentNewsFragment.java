@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -30,6 +31,7 @@ public class RecentNewsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
+    private ProgressBar progressBar;
     ArrayList<NewsPojo> userPojos = new ArrayList<>();
     public static final String url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=33f92e4321d34c3d91ea41e6df82269c";
     RequestQueue requestQueue;
@@ -42,9 +44,11 @@ public class RecentNewsFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerviewRecentNews);
         recyclerView.setHasFixedSize(true);
+        progressBar= view.findViewById(R.id.progressBar);
         layoutManager = new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(layoutManager);
 
+        progressBar.setVisibility(View.VISIBLE);
 
         Log.d("1234", "onCreate: ");
         requestQueue = Volley.newRequestQueue(this.getContext());
@@ -74,6 +78,7 @@ public class RecentNewsFragment extends Fragment {
 
                     Log.d("12345", "onResponse: getview ");
                     NewsCustomAdapter newsCustomAdapter = new NewsCustomAdapter(getContext(), userPojos);
+                    progressBar.setVisibility(View.GONE);
                     recyclerView.setAdapter(newsCustomAdapter);
 
 

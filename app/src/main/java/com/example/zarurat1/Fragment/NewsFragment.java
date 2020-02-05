@@ -31,6 +31,7 @@ public class NewsFragment extends Fragment{
         //LOAD PAGE FOR FIRST
         loadPage(new RecentNewsFragment());
         tvRecent.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
+        newsRecent.setBackgroundColor(getActivity().getResources().getColor(R.color.colorWhite));
 
         return view;
     }
@@ -56,8 +57,9 @@ public class NewsFragment extends Fragment{
 
                     //WHEN CLICK TEXT COLOR CHANGED
                     tvRecent.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
-                    tvPersonal.setTextColor(getActivity().getResources().getColor(R.color.colorAccent));
-
+                    tvPersonal.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    newsRecent.setBackgroundColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    newsPersonal.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
                     //VIEW VISIBILITY WHEN CLICKED
                     view1.setVisibility(View.VISIBLE);
                     view2.setVisibility(View.INVISIBLE);
@@ -68,8 +70,10 @@ public class NewsFragment extends Fragment{
                     loadPage(new PersonlizedNewsFragment());
 
                     //WHEN CLICK TEXT COLOR CHANGED
-                    tvRecent.setTextColor(getActivity().getResources().getColor(R.color.colorAccent));
+                    tvRecent.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
                     tvPersonal.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    newsPersonal.setBackgroundColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    newsRecent.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
 
                     //VIEW VISIBILITY WHEN CLICKED
                     view1.setVisibility(View.INVISIBLE);
