@@ -1,21 +1,19 @@
 package com.example.zarurat1.Fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-import com.example.zarurat1.Adapter.PageNAdapter;
 import com.example.zarurat1.R;
 
-public class NewsFragment extends Fragment {
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+public class NewsFragment extends Fragment{
+        FrameLayout newsRecent, newsPersonal;
+        View view1, view2;
+        TextView tvRecent, tvPersonal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -23,51 +21,75 @@ public class NewsFragment extends Fragment {
         // Inflate the layout for this fragment
         final View view= inflater.inflate(R.layout.fragment_news, container, false);
 
+        //INIT VIEWS
+        init(view);
 
-        tabLayout=view.findViewById(R.id.newsTablayout);
-        viewPager=view.findViewById(R.id.newsViewPager);
+        //SET TABS ONCLICK
+        newsRecent.setOnClickListener(clik);
+        newsPersonal.setOnClickListener(clik);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Recent"));
-        tabLayout.addTab(tabLayout.newTab().setText("Personalized"));
-        PageNAdapter pageNAdapter=new PageNAdapter(getFragmentManager(),tabLayout.getTabCount());
-
-        viewPager.setAdapter(pageNAdapter);
-
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int i, float v, int i1) {
-                tabLayout.setScrollPosition(i,v,true);
-            }
-
-            @Override
-            public void onPageSelected(int i) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int i) {
-
-            }
-        });
+        //LOAD PAGE FOR FIRST
+        loadPage(new RecentNewsFragment());
+        tvRecent.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
 
         return view;
+    }
+
+    public void init(View v){
+        newsRecent = v.findViewById(R.id.fragRecentNews);
+        newsPersonal = v.findViewById(R.id.fragPersonalNews);
+        view1 = v.findViewById(R.id.view_1);
+        view2 = v.findViewById(R.id.view_2);
+        tvRecent = v.findViewById(R.id.tvrecent);
+        tvPersonal= v.findViewById(R.id.tvPersonal);
+    }
+
+    //ONCLICK LISTENER
+    public View.OnClickListener clik = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.fragRecentNews:
+                    //ONSELLER CLICK
+                    //LOAD SELLER FRAGMENT CLASS
+                    loadPage(new RecentNewsFragment());
+
+                    //WHEN CLICK TEXT COLOR CHANGED
+                    tvRecent.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    tvPersonal.setTextColor(getActivity().getResources().getColor(R.color.colorAccent));
+
+                    //VIEW VISIBILITY WHEN CLICKED
+                    view1.setVisibility(View.VISIBLE);
+                    view2.setVisibility(View.INVISIBLE);
+                    break;
+                case R.id.fragPersonalNews:
+                    //ONBUYER CLICK
+                    //LOAD BUYER FRAGMENT CLASS
+                    loadPage(new PersonlizedNewsFragment());
+
+                    //WHEN CLICK TEXT COLOR CHANGED
+                    tvRecent.setTextColor(getActivity().getResources().getColor(R.color.colorAccent));
+                    tvPersonal.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
+
+                    //VIEW VISIBILITY WHEN CLICKED
+                    view1.setVisibility(View.INVISIBLE);
+                    view2.setVisibility(View.VISIBLE);
+                    break;
+            }
+        }
+    };
+
+    //LOAD PAGE FRAGMENT METHOD
+    private boolean loadPage(Fragment fragment) {
+
+        if (fragment != null) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.containerPage, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
 }

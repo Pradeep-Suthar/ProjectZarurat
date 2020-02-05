@@ -20,6 +20,12 @@ public class PageNAdapter extends FragmentPagerAdapter {
         switch(i){
             case 0:
                 RecentNewsFragment tab1=new RecentNewsFragment();
+                 /*FragmentTransaction ft=getChildFragmentManager().beginTransaction();
+                GenrelChatFragment gf=new GenrelChatFragment();
+                ft.replace(R.id.chatContainFrgment,gf);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                ft.commit();*/
+
                 return tab1;
             case 1:
                 PersonlizedNewsFragment tab2=new PersonlizedNewsFragment();
