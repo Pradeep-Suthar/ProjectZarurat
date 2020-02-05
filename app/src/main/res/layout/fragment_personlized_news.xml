@@ -19,7 +19,7 @@
         android:layout_height="match_parent">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cardCropDetails"
+            android:id="@+id/cardBuisness"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -61,7 +61,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cardCropPrice"
+            android:id="@+id/cardEntertainment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -103,7 +103,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
-            android:id="@+id/cardFertilizer"
+            android:id="@+id/cardHealth"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -144,7 +144,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
-            android:id="@+id/cardN"
+            android:id="@+id/cardScience"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -186,7 +186,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cardNw"
+            android:id="@+id/cardSports"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
