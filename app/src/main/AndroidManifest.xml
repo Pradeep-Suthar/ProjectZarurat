@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PersonalNewsListActivity"></activity>
+        <activity android:name=".Activity.FullNewsActivity"></activity>
+        <activity android:name=".Activity.PersonalNewsListActivity" />
         <activity
             android:name=".Activity.MainActivity"
             android:label="@string/title_activity_main"

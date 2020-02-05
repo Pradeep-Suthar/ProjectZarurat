@@ -81,7 +81,7 @@ public class PersonlizedNewsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), PersonalNewsListActivity.class);
-                intent.putExtra("newsType","business");
+                intent.putExtra("newsType","Business");
                 startActivity(intent);
             }
         });

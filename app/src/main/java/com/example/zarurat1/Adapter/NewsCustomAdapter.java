@@ -1,6 +1,7 @@
 package com.example.zarurat1.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.zarurat1.Activity.FullNewsActivity;
 import com.example.zarurat1.Pojo.NewsPojo;
 import com.example.zarurat1.R;
 
@@ -45,7 +47,15 @@ public class NewsCustomAdapter extends RecyclerView.Adapter<NewsCustomAdapter.Vi
             holder.cardViewNews.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent=new Intent(context, FullNewsActivity.class);
+                    intent.putExtra("title",myPojo.getTitle());
+                    intent.putExtra("name",myPojo.getName());
+                    intent.putExtra("content",myPojo.getContent());
+                    intent.putExtra("description",myPojo.getDescription());
+                    intent.putExtra("date",myPojo.getDate());
+                    intent.putExtra("imgUrl",myPojo.getImgUrl());
+                    intent.putExtra("link",myPojo.getLink());
+                    context.startActivity(intent);
                 }
             });
 
