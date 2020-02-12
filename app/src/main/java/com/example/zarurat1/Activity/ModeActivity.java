@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import com.example.zarurat1.R;
 
 public class ModeActivity extends AppCompatActivity {
-    ImageView imageViewUser;
+    ImageView imageViewUser,imageViewServiceProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +18,24 @@ public class ModeActivity extends AppCompatActivity {
 
 
         imageViewUser=findViewById(R.id.imageviewUser);
+        imageViewServiceProvider=findViewById(R.id.imageviewService);
+
 
         imageViewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(ModeActivity.this,MainActivity.class);
+                intent.putExtra("mode","userInfo");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        imageViewServiceProvider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ModeActivity.this,MainActivity.class);
+                intent.putExtra("mode","serviceProviderInfo");
                 startActivity(intent);
                 finish();
             }
