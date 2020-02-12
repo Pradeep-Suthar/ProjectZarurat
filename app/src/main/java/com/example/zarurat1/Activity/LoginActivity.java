@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextPwd=findViewById(R.id.loginPwd);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference(mode);
+
 
         buttonUser.setOnClickListener(clik);
         buttonService.setOnClickListener(clik);
@@ -67,10 +67,12 @@ public class LoginActivity extends AppCompatActivity {
         buttonSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                setLogin();
-                finish();
+                if(modeselect==1){
+                    setLogin();
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "Please Select Login Type", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -106,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
         final String email=editTextEmail.getText().toString();
         final String password=editTextPwd.getText().toString();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+       firebaseDatabase.getReference(mode).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren() ){
@@ -137,9 +139,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this,"Login Error" ,Toast.LENGTH_SHORT).show();
                         progressDialog.cancel();
                     }
-                }
-                if(modeselect==0){
-                    Toast.makeText(LoginActivity.this, "Please Select Login Type", Toast.LENGTH_SHORT).show();
                 }
                 if(flag==1 && modeselect==1) {
                     progressDialog.cancel();

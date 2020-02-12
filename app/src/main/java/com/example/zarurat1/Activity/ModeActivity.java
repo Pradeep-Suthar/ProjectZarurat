@@ -24,7 +24,7 @@ public class ModeActivity extends AppCompatActivity {
         imageViewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(ModeActivity.this,MainActivity.class);
+                Intent intent=new Intent(ModeActivity.this,RegistrationActivity.class);
                 intent.putExtra("mode","userInfo");
                 startActivity(intent);
                 finish();
@@ -34,7 +34,7 @@ public class ModeActivity extends AppCompatActivity {
         imageViewServiceProvider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(ModeActivity.this,MainActivity.class);
+                Intent intent=new Intent(ModeActivity.this,RegistrationActivity.class);
                 intent.putExtra("mode","serviceProviderInfo");
                 startActivity(intent);
                 finish();

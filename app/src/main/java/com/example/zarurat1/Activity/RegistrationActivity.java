@@ -185,7 +185,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         RegeditTextEmail.requestFocus();
                     }
                     else{
-                        final StorageReference reference = storageReference.child("/Image/" + email);
+                        final StorageReference reference = storageReference.child("/ImageProfile/" + email);
                         reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                             @Override
                             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
