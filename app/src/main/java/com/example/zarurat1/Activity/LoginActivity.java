@@ -29,6 +29,9 @@ public class LoginActivity extends AppCompatActivity {
         buttonUser=findViewById(R.id.buttonUser);
         buttonService=findViewById(R.id.buttonServices);
 
+        buttonUser.setOnClickListener(clik);
+        buttonService.setOnClickListener(clik);
+
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
@@ -38,35 +41,15 @@ public class LoginActivity extends AppCompatActivity {
         buttonUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(buttonState % 2 == 0){
-                    buttonUser.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    buttonService.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                    Toast.makeText(getBaseContext(), "User mode Selected", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    buttonUser.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                    buttonService.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    Toast.makeText(getBaseContext(), "User mode Unselected", Toast.LENGTH_SHORT).show();
-                }
-                buttonState++;
+
             }
         });
 
         buttonService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(buttonState % 2 == 0){
-                    buttonService.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    buttonUser.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                    Toast.makeText(getBaseContext(), "Services mode Selected", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    buttonService.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                    buttonUser.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    Toast.makeText(getBaseContext(), "Services mode Selected", Toast.LENGTH_SHORT).show();
-                }
-                buttonState++;
-            }
+
+                           }
         });
 
         textViewSignup.setOnClickListener(new View.OnClickListener() {
@@ -87,4 +70,21 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+    public View.OnClickListener clik = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.buttonUser:
+                    buttonUser.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    buttonService.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    Toast.makeText(getBaseContext(), "User mode Selected", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.buttonServices:
+                    buttonService.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    buttonUser.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    Toast.makeText(getBaseContext(), "Services mode Selected", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    };
 }
