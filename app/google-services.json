@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "78648942715",
+    "firebase_url": "https://zarurat-fc7ff.firebaseio.com",
+    "project_id": "zarurat-fc7ff",
+    "storage_bucket": "zarurat-fc7ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78648942715:android:23a28dcfad54a9dcc582de",
+        "android_client_info": {
+          "package_name": "com.example.zarurat1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78648942715-d4hcu8c0615as9s48f7v0vfi93a1nmq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7pdiYpSFfYwotyt919s9mITZqPL1u1kk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78648942715-d4hcu8c0615as9s48f7v0vfi93a1nmq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

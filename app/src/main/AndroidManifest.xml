@@ -13,7 +13,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.FullNewsActivity"></activity>
+        <activity android:name=".Activity.RemoveKhataMemberActivity"></activity>
+        <activity android:name=".Activity.AddKhataMemberActivity" />
+        <activity android:name=".Activity.FullNewsActivity" />
         <activity android:name=".Activity.PersonalNewsListActivity" />
         <activity
             android:name=".Activity.MainActivity"
