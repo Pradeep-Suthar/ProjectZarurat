@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewNews"
+        android:elevation="8dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageKhataName"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:id="@+id/textkhataName"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18dp"
+                    android:text="Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textColor="@color/colorBlackTrans"
+                    android:id="@+id/textkhataEmail"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginTop="6dp"
+                    android:textSize="15dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:textColor="@color/colorBlackTrans"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="6dp"
+                        android:textSize="18dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Amount -"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:id="@+id/textkhataAmount"
+                        android:layout_width="0dp"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="15dp"
+                        android:text="Rs 300"
+                        android:textColor="@color/colorRed"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

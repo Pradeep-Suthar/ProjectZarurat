@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewNews"
+        android:elevation="8dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageKhataName"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:id="@+id/textkhataName"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18dp"
+                    android:text="Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textColor="@color/colorBlackTrans"
+                    android:id="@+id/textkhataEmail"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginTop="6dp"
+                    android:textSize="15dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonkhataRemove"
+                android:background="@color/colorRed"
+                android:text="X"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

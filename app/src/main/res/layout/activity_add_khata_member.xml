@@ -27,7 +27,7 @@
                 android:textSize="15dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:textColorHint="@color/colorBlackTrans"
-                android:id="@+id/name"
+                android:id="@+id/khataMembername"
                 android:layout_margin="5dp"
                 android:textColor="@color/colorBlack"
                 android:inputType="text"
@@ -47,7 +47,7 @@
                 android:textSize="15dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:textColorHint="@color/colorBlackTrans"
-                android:id="@+id/Email"
+                android:id="@+id/khataMemberEmail"
                 android:layout_margin="5dp"
                 android:textColor="@color/colorBlack"
                 android:inputType="textEmailAddress"
@@ -67,7 +67,7 @@
                 android:textSize="15dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:textColorHint="@color/colorBlackTrans"
-                android:id="@+id/mobile"
+                android:id="@+id/khataMembermobile"
                 android:layout_margin="5dp"
                 android:textColor="@color/colorBlack"
                 android:inputType="number"
@@ -100,6 +100,28 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            android:textColorHint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@color/colorBlackTrans"
+                android:id="@+id/KhataDescription"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:inputType="number"
+                android:hint="Amount Description"
+                android:maxLength="6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.design.widget.TextInputLayout>
+
         <LinearLayout
             android:layout_below="@+id/imagelogo2"
             android:layout_marginTop="10dp"
@@ -111,7 +133,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/buttonUser"
+                android:id="@+id/buttonGive"
                 android:fontFamily="sans-serif-smallcaps"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorAccent"
@@ -123,7 +145,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/buttonServices"
+                android:id="@+id/buttonTake"
                 android:fontFamily="sans-serif-smallcaps"
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorAccent"
@@ -143,8 +165,8 @@
             android:background="@color/colorPrimary"
             android:textAllCaps="false"
             android:textSize="25sp"
-            android:id="@+id/buttonsignup"
-            android:text="Sign Up"
+            android:id="@+id/buttonSave"
+            android:text="Save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
