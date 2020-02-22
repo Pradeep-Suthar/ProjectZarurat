@@ -48,7 +48,7 @@ public class AddKhataMemberActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_khata_member);
 
 
-        Toolbar toolbar1 = findViewById(R.id.toolbar1);
+        Toolbar toolbar1 = findViewById(R.id.toolbarKhataAdd);
         setSupportActionBar(toolbar1);
         getSupportActionBar().setTitle("Add Member");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -56,6 +56,14 @@ public class AddKhataMemberActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("khataInfo");
+
+        toolbar1.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
 
         editTextName = findViewById(R.id.khataMembername);
@@ -89,14 +97,14 @@ public class AddKhataMemberActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.buttonGive:
-                    buttonGive.setBackgroundColor(getResources().getColor(R.color.colorGreenDark));
+                    buttonGive.setBackgroundColor(getResources().getColor(R.color.colorRed));
                     buttonTake.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                     give=1;
                     take=0;
                     break;
                 case R.id.buttonTake:
                     buttonGive.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                    buttonTake.setBackgroundColor(getResources().getColor(R.color.colorRed));
+                    buttonTake.setBackgroundColor(getResources().getColor(R.color.colorGreenDark));
                     take=1;
                     give=0;
                     break;
@@ -151,9 +159,9 @@ public class AddKhataMemberActivity extends AppCompatActivity {
             editTextMobile.setError("Please enter valid phone number");
             progressDialog.cancel();
         }else if (amount.length()==0) {
-            editTextMobile.setError("please enter minimum base amount");
+            editTextAmount.setError("please enter minimum base amount");
             progressDialog.cancel();
-            editTextMobile.requestFocus();
+            editTextAmount.requestFocus();
         }else{
             Query emailQuery=databaseReference.child(name1+mobile1).orderByChild("email").equalTo(email);
             Log.d("12345", "getSignUp:email query enter ");
@@ -171,10 +179,12 @@ public class AddKhataMemberActivity extends AppCompatActivity {
                         khataPojo.setName(name);
                         khataPojo.setMoble_no(mobile);
                         if(take==1){
-                            khataPojo.setAmount("+"+amount);
+                            khataPojo.setBAmount("+"+amount);
+                            khataPojo.setFAmount("+"+amount);
                         }
                         if(give==1){
-                            khataPojo.setAmount("-"+amount);
+                            khataPojo.setBAmount("-"+amount);
+                            khataPojo.setFAmount("-"+amount);
                         }
                         khataPojo.setDate(date);
                         khataPojo.setTime(time);
@@ -184,7 +194,6 @@ public class AddKhataMemberActivity extends AppCompatActivity {
                         Toast.makeText(AddKhataMemberActivity.this, "Registration Successfully", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(AddKhataMemberActivity.this, KhataFragment.class);
                         startActivity(intent);
-                        finish();
 
                     }
                 }

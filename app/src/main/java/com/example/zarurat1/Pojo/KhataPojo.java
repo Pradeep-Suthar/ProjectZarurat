@@ -38,12 +38,19 @@ public class KhataPojo {
         Moble_no = moble_no;
     }
 
-    public String getAmount() {
-        return amount;
+    public String getBAmount() {
+        return Bamount;
     }
 
-    public void setAmount(String amount) {
-        this.amount = amount;
+    public void setBAmount(String Bamount) {
+        this.Bamount = Bamount;
+    }
+    public String getFAmount() {
+        return Famount;
+    }
+
+    public void setFAmount(String Famount) {
+        this.Famount = Famount;
     }
 
     public String getDescription() {
@@ -63,7 +70,8 @@ public class KhataPojo {
     }
 
     private String Moble_no;
-    private String amount;
+    private String Bamount;
+    private String Famount;
     private String description;
     private String date;
 

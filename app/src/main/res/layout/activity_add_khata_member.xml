@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".Activity.AddKhataMemberActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarKhataAdd"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
     <LinearLayout
         android:layout_marginBottom="40dp"
         android:layout_marginLeft="20dp"
@@ -114,9 +131,8 @@
                 android:id="@+id/KhataDescription"
                 android:layout_margin="5dp"
                 android:textColor="@color/colorBlack"
-                android:inputType="number"
+                android:inputType="text"
                 android:hint="Amount Description"
-                android:maxLength="6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

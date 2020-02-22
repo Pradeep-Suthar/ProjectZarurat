@@ -19,4 +19,13 @@
     <color name="colorRed">#E62424</color>
     <color name="colorRedTrans">#79CF1814</color>
     <color name="colorBlueTrans">#83152AA8</color>
+
+    <integer-array name="color_array">
+        <item>@color/colorPrimary</item>
+        <item>@color/colorRed</item>
+        <item>@color/colorSky</item>
+        <item>@color/colorYellow</item>
+        <item>@color/colorGreen</item>
+        <item>@color/colorBlueTrans</item>
+    </integer-array>
 </resources>
