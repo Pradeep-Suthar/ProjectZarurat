@@ -158,12 +158,12 @@ public class KhataDetailsActivity extends AppCompatActivity {
 
                 arrayList.clear();
                 Log.d("1234", "onDataChange: ref ");
-                KhataPojo khataPojo1 = new KhataPojo();
+              /*  KhataPojo khataPojo1 = new KhataPojo();
                 khataPojo1.setDescription(descriptionMain);
                 khataPojo1.setBAmount(bamount);
                 khataPojo1.setDate(date);
                 khataPojo1.setTime(time);
-                arrayList.add(khataPojo1);
+                arrayList.add(khataPojo1);*/
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     Log.d("1234", "onDataChange: for " + dataSnapshot1);
                     KhataPojo khataPojo = dataSnapshot1.getValue(KhataPojo.class);
@@ -172,12 +172,15 @@ public class KhataDetailsActivity extends AppCompatActivity {
                 Log.d("1234", "onDataChange: " + arrayList.size());
                 Log.d("1234", "onDataChange: " + arrayList);
                 for(KhataPojo khataPojodata:arrayList){
+                    Log.d("1234", "onDataChange: " + arrayList.get(0));
                     String amt= khataPojodata.getFAmount();
+                    Log.d("1234", "onDataChange: " + amt);
                     if(amt.charAt(0)=='-'){
                         sumAmount=sumAmount-Integer.parseInt(amt.substring(1));
+                        Log.d("1234", "onDataChange: " + sumAmount);
                     }
                     else{
-                        sumAmount=sumAmount-Integer.parseInt(amt.substring(1));
+                        sumAmount=sumAmount+Integer.parseInt(amt.substring(1));
                     }
                 }
                 adapter = new KhataAmountCustomAdapter(KhataDetailsActivity.this, arrayList);

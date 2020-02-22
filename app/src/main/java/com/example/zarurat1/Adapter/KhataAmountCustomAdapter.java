@@ -39,7 +39,7 @@ public class KhataAmountCustomAdapter extends RecyclerView.Adapter<KhataAmountCu
         holder.description.setText(myPojo.getDescription());
         String data_time=myPojo.getDate()+" "+myPojo.getTime();
         holder.dateTime.setText(data_time);
-        String amountcheck =myPojo.getBAmount();
+        String amountcheck =myPojo.getFAmount();
 
         if(amountcheck.charAt(0)=='-'){
             holder.textAmountred.setText("Rs "+amountcheck.substring(1));
