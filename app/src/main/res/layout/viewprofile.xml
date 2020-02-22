@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/Vprofileimageview1"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        app:civ_border_width="1dp"
+        android:elevation="5dp"
+        app:civ_border_color="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:textColor="@color/colorGreenDark"
+        android:layout_margin="10dp"
+        android:id="@+id/VprofileTextViewName"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/Vprofileimageview1"
+        android:text="Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:layout_margin="10dp"
+        android:id="@+id/VprofileTextViewEmail"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/VprofileTextViewName"
+        android:text="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="@color/colorAccent"
+        android:layout_margin="10dp"
+        android:id="@+id/VprofileTextViewMobile"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/VprofileTextViewEmail"
+        android:text="Mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
