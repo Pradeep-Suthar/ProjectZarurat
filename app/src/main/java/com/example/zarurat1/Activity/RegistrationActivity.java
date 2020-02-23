@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -82,6 +84,121 @@ public class RegistrationActivity extends AppCompatActivity {
         RegeditTextDob=findViewById(R.id.dob);
 
         selectImageHelper = new SelectImageHelper(this, RegImageview);
+
+        RegeditTextName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (RegeditTextName.getText().toString().length() == 0) {
+                    RegeditTextName.setError("please enter name");
+                    RegeditTextName.requestFocus();
+                }else if (!s1.matcher(RegeditTextName.getText().toString()).matches()) {
+                    RegeditTextName.setError("Please enter valid name");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        RegeditTextEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!Patterns.EMAIL_ADDRESS.matcher(RegeditTextEmail.getText().toString()).matches()) {
+                    RegeditTextEmail.setError("please enter valid email address");
+                    RegeditTextEmail.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        RegeditTextMobile.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (RegeditTextMobile.getText().toString().length() < 10) {
+                    RegeditTextMobile.setError("please enter 10 digit mobile number");
+                    RegeditTextMobile.requestFocus();
+                } else if (!s4.matcher(RegeditTextMobile.getText().toString()).matches()) {
+                    RegeditTextMobile.setError("Please enter valid phone number");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        RegeditTextDob.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(RegeditTextDob.getText().toString().length()==0){
+                    RegeditTextDob.setError("please enter Date of Birth");
+                    RegeditTextDob.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        RegeditTextPwd.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (RegeditTextPwd.getText().toString().length() < 6) {
+                    RegeditTextPwd.setError("password can not be less than 6 character");
+                } else if (!s3.matcher(RegeditTextPwd.getText().toString()).matches()) {
+                    RegeditTextPwd.setError("enter valid password");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        RegeditTextCPwd.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (RegeditTextCPwd.length() < 6 || !RegeditTextPwd.getText().toString().equals(RegeditTextCPwd.getText().toString())) {
+                    RegeditTextCPwd.setError("password does not match");
+                    RegeditTextCPwd.requestFocus();
+                } else if (!s3.matcher(RegeditTextCPwd.getText().toString()).matches()) {
+                    RegeditTextCPwd.setError("enter valid password");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
 
         RegImageview.setOnClickListener(new View.OnClickListener() {
             @Override
