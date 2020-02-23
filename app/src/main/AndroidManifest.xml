@@ -13,7 +13,16 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.KhataDetailsActivity"></activity>
+        <activity android:name=".Activity.JobService_Activity"></activity>
+        <activity android:name=".Activity.CoachingService_Activity" />
+        <activity android:name=".Activity.FoodService_Activity" />
+        <activity android:name=".Activity.LivingService_Activity" />
+        <activity android:name=".Activity.AddServiceCategory_activity" />
+        <activity
+            android:name=".Activity.ServiveProviderWelcomeActivity"
+            android:label="@string/title_activity_servive_provider_welcome"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.KhataDetailsActivity" />
         <activity android:name=".Activity.RemoveKhataMemberActivity" />
         <activity android:name=".Activity.AddKhataMemberActivity" />
         <activity android:name=".Activity.FullNewsActivity" />

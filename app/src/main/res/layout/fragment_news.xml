@@ -42,7 +42,7 @@
         <TextView
             android:id="@+id/tvPersonal"
             android:layout_gravity="center"
-            android:text="Personalize"
+            android:text="Categorized"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/colorWhite"

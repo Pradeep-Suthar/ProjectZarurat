@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2"
+    android:orientation="vertical"
+    tools:context=".Activity.LivingService_Activity">
+    <Spinner
+        android:layout_margin="10dp"
+        android:layout_weight="0.2"
+        android:id="@+id/spinnertype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:text="Other Details"
+            android:gravity="center"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:id="@+id/livingplaceimage"/>
+
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_weight="0.2"
+            android:id="@+id/baseprice"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:hint="Base Price" />
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:text="Mess Facility"
+        android:textAllCaps="false"/>
+    <RadioGroup
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:id="@+id/radiogroupmesscheck">
+    <RadioButton
+        android:checked="false"
+        android:layout_width="match_parent"
+        android:id="@+id/radioyes"
+        android:layout_height="0dp"
+        android:text="Yes"
+        android:textSize="20dp"
+        android:textAllCaps="false" />
+        <RadioButton
+            android:checked="false"
+            android:layout_width="match_parent"
+            android:id="@+id/radiono"
+            android:layout_height="0dp"
+            android:textSize="20dp"
+            android:text="No"
+            android:textAllCaps="false" />
+    </RadioGroup>
+
+    <Button
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:id="@+id/buttonaddlocation"
+        android:text="Add Location"/>
+
+
+
+
+
+
+
+    </LinearLayout>
