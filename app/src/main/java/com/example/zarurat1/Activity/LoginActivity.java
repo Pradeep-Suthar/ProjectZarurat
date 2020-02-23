@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(modeselect==1){
+                if(modeselect==1 || modeselect==2){
                     setLogin();
                 }
                 else{
@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                     buttonService.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                     buttonUser.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                     mode="serviceProviderInfo";
-                    modeselect=1;
+                    modeselect=2;
                     Toast.makeText(getBaseContext(), "Services mode Selected", Toast.LENGTH_SHORT).show();
                     break;
             }
@@ -143,6 +143,13 @@ public class LoginActivity extends AppCompatActivity {
                 if(flag==1 && modeselect==1) {
                     progressDialog.cancel();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+               else if(flag==1 && modeselect==2){
+                    progressDialog.cancel();
+                    Intent intent=new Intent(LoginActivity.this,ServiveProviderWelcomeActivity.class);
                     startActivity(intent);
                     Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                     finish();
