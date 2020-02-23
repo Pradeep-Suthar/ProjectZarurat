@@ -262,11 +262,11 @@ public class MainActivity extends AppCompatActivity
             ImageView imagecall,imageemail;
             imageemail=findViewById(R.id.imageViewMail);
             imagecall=findViewById(R.id.imageViewCall);
-            imageemail.setOnClickListener(new View.OnClickListener() {
+          /*  imageemail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     final int d = Log.d("12345", "onClick: enter in send mail");
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity(MainActivity.this,));
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
                     LayoutInflater layoutInflater = getLayoutInflater();
                     View view = layoutInflater.inflate(R.layout.mail_content_dialog, null, false);
                     alertDialogBuilder.setView(view);
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity
                             try{
                                 startActivity(Intent.createChooser(intent,"Send Email..."));
                             }catch (android.content.ActivityNotFoundException ex){
-                                Toast.makeText(getActivity(), "There are no email client installed", Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(getActivity(), "There are no email client installed", Toast.LENGTH_SHORT).show();
                             }
                             dialog.dismiss();
                         }
@@ -311,7 +311,7 @@ public class MainActivity extends AppCompatActivity
             });
 
             dialog.show();
-
+*/
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
