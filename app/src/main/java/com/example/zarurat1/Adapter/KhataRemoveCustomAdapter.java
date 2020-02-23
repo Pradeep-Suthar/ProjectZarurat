@@ -1,7 +1,6 @@
 package com.example.zarurat1.Adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +19,7 @@ public class KhataRemoveCustomAdapter extends ArrayAdapter {
     Context context;
     int resource;
     ArrayList<KhataPojo> arrayList;
+
     public KhataRemoveCustomAdapter(Context context, int resource, ArrayList<KhataPojo> arrayList) {
         super(context, resource, arrayList);
         Log.d("12345", "NewsCustomAdapter:"+context.toString());
@@ -34,7 +34,6 @@ public class KhataRemoveCustomAdapter extends ArrayAdapter {
 
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(resource, null,false);
-        CardView cardView=view.findViewById(R.id.cardViewNews);
         TextView textKhataName = view.findViewById(R.id.textkhataNameR);
         TextView textKhataEmail = view.findViewById(R.id.textkhataEmailR);
         Button buttonRemove= view.findViewById(R.id.buttonkhataRemove);

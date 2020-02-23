@@ -45,7 +45,7 @@ public class KhataDetailsActivity extends AppCompatActivity {
 
 
     int give=0,take=0;
-    int sumAmount = 0;
+    static int sumAmount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

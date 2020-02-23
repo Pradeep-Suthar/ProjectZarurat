@@ -31,7 +31,7 @@ public class RemoveKhataMemberActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remove_khata_member);
 
-        khataRemoveListview=findViewById(R.id.recyclerviewKhata1);
+        khataRemoveListview=findViewById(R.id.khataRemoveListview);
 
 
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -39,9 +39,6 @@ public class RemoveKhataMemberActivity extends AppCompatActivity {
 
 
         getDataofKhata();
-
-        KhataRemoveCustomAdapter customAdapter = new KhataRemoveCustomAdapter(this, R.layout.khataremove_layout,khataPojos);
-        khataRemoveListview.setAdapter(customAdapter);
 
 
     }
