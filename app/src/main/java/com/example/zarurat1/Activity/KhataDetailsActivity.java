@@ -117,7 +117,7 @@ public class KhataDetailsActivity extends AppCompatActivity {
 
         loadAmountList();
 
-        sumAmount=findSum();
+        findSum();
 
         if(sumAmount<0){
             textViewAmount.setText(""+sumAmount );
@@ -134,43 +134,57 @@ public class KhataDetailsActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-        updateFAmount();
+        updateFAmount(sumAmount);
 
     }
 
-    public int findSum() {
+    public void findSum() {
         Intent intent = getIntent();
         String mobileNo = intent.getStringExtra("mobileNo");
+        String bamt=intent.getStringExtra("bamount");
+        if(bamt.charAt(0) == '-'){
+            sumAmount=-Integer.parseInt(bamt.substring(1));
+            Log.d("1234", "1-.findSum: "+sumAmount);
+
+        }else if(bamt.charAt(0)== '+'){
+            sumAmount=Integer.parseInt(bamt.substring(1));
+            Log.d("1234", "2+.findSum: "+sumAmount);
+        }
+
         reference.child(mobileNo).child("amountList").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren() ){
                     KhataPojo khataPojo = dataSnapshot1.getValue(KhataPojo.class);
+                    String amt = khataPojo.getFAmount();
+                    Log.d("1234", "data: "+amt);
+                    if(amt.charAt(0) == '-'){
+                        sumAmount=sumAmount-Integer.parseInt(amt.substring(1));
+                        Log.d("1234", "3-.for loop: "+sumAmount);
 
-
+                    }else if(amt.charAt(0)== '+'){
+                        sumAmount=sumAmount+Integer.parseInt(amt.substring(1));
+                        Log.d("1234", "4+.for loop: "+sumAmount);
                     }
-
                 }
+                Log.d("1234", "5+.for loop: "+sumAmount);
+            }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
-        return 0;
-
     }
 
-    public void updateFAmount() {
+    public void updateFAmount(int x) {
         HashMap<String, Object> map = new HashMap<String, Object>();
-        if(sumAmount<0){
-            map.put("famount", "-"+sumAmount);
+        if(x<0){
+            map.put("famount", "-"+x);
 
         }else{
-            map.put("famount", "+"+sumAmount);
+            map.put("famount", "+"+x);
         }
         Intent intent = getIntent();
         final String mobileNo = intent.getStringExtra("mobileNo");
