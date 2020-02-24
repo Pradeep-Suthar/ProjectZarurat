@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cardViewNews"
+        android:id="@+id/cardViewRemoveKhata"
         android:elevation="8dp"
         app:cardCornerRadius="10dp"
         android:layout_marginTop="8dp"
@@ -21,24 +21,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imageKhataName"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher" />
-
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="270dp"
+                android:layout_width="340dp"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:textStyle="bold"
                     android:textColor="@color/colorBlack"
-                    android:id="@+id/textkhataName"
+                    android:id="@+id/textkhataNameR"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="3dp"
                     android:layout_marginTop="10dp"
@@ -49,7 +40,7 @@
 
                 <TextView
                     android:textColor="@color/colorBlackTrans"
-                    android:id="@+id/textkhataEmail"
+                    android:id="@+id/textkhataEmailR"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="3dp"
                     android:layout_marginTop="6dp"

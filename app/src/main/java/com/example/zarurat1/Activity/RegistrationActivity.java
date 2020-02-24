@@ -97,6 +97,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     RegeditTextName.requestFocus();
                 }else if (!s1.matcher(RegeditTextName.getText().toString()).matches()) {
                     RegeditTextName.setError("Please enter valid name");
+                    RegeditTextName.requestFocus();
                 }
             }
 
@@ -135,6 +136,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     RegeditTextMobile.requestFocus();
                 } else if (!s4.matcher(RegeditTextMobile.getText().toString()).matches()) {
                     RegeditTextMobile.setError("Please enter valid phone number");
+                    RegeditTextMobile.requestFocus();
                 }
             }
 
@@ -170,8 +172,10 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (RegeditTextPwd.getText().toString().length() < 6) {
                     RegeditTextPwd.setError("password can not be less than 6 character");
+                    RegeditTextPwd.requestFocus();
                 } else if (!s3.matcher(RegeditTextPwd.getText().toString()).matches()) {
                     RegeditTextPwd.setError("enter valid password");
+                    RegeditTextPwd.requestFocus();
                 }
             }
 
@@ -192,6 +196,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     RegeditTextCPwd.requestFocus();
                 } else if (!s3.matcher(RegeditTextCPwd.getText().toString()).matches()) {
                     RegeditTextCPwd.setError("enter valid password");
+                    RegeditTextCPwd.requestFocus();
                 }
             }
 
