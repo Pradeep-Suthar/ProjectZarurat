@@ -25,10 +25,11 @@
         android:layout_below="@+id/imagelogo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome Back Login Here"/>
+        android:text="Welcome,Login Here"/>
 
 
     <LinearLayout
+        android:id="@+id/linearlayoutmode"
         android:layout_below="@+id/imagelogo2"
         android:layout_marginTop="70dp"
         android:weightSum="2"
@@ -63,6 +64,26 @@
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_below="@+id/linearlayoutmode"
+        android:src="@drawable/users3_add"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/colorWhite"/>
+<android.support.v7.widget.CardView
+    android:layout_below="@+id/profile_image"
+    android:layout_margin="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="28dp"
+    app:cardCornerRadius="25dp">
 
     <LinearLayout
         android:layout_marginBottom="40dp"
@@ -143,5 +164,5 @@
 
     </LinearLayout>
 
-
+</android.support.v7.widget.CardView>
 </RelativeLayout>

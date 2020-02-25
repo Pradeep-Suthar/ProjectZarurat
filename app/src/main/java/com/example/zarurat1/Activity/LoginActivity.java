@@ -49,9 +49,15 @@ public class LoginActivity extends AppCompatActivity {
         buttonService.setOnClickListener(clik);
 
         SharedPreferences sharedPreferences1=getSharedPreferences("myprf",MODE_PRIVATE);
-        Boolean status=sharedPreferences1.getBoolean("loginStatus",false);
-        if(status==true){
+        Boolean status1=sharedPreferences1.getBoolean("loginStatususer",false);
+        Boolean status2=sharedPreferences1.getBoolean("loginStatusservice",false);
+        if(status1==true){
             Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if(status2==true){
+            Intent intent=new Intent(LoginActivity.this,ServiveProviderWelcomeActivity.class);
             startActivity(intent);
             finish();
         }
@@ -130,7 +136,13 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("pwd",pwds);
                         editor.putString("pin",dob);
                         editor.putString("imgUrl",urls);
-                        editor.putBoolean("loginStatus",true);
+                        if(modeselect==1) {
+                            editor.putBoolean("loginStatususer", true);
+                        }
+                        else if(modeselect==2)
+                        {
+                            editor.putBoolean("loginStatusservice",true);
+                        }
                         editor.commit();
                         flag=1;
                         break;

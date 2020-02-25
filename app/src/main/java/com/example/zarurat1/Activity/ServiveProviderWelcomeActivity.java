@@ -81,7 +81,7 @@ public class ServiveProviderWelcomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
 
-            // Handle the camera action
+
         } else if (id == R.id.nav_AddService) {
             fragment=new AddServiceCategoryFragment();
         } else if (id == R.id.nav_EditService) {
