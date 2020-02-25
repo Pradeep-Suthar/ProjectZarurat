@@ -46,6 +46,7 @@ public class KhataRemoveCustomAdapter extends ArrayAdapter {
             @Override
             public void onClick(View v) {
 
+
             }
         });
 
