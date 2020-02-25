@@ -5,10 +5,10 @@
     android:useLevel="true">
     <stroke
         android:width="4px"
-        android:color="@color/red" />
+        android:color="@color/colorPrimary" />
     <size
         android:width="4dip"
         android:height="4dip" />
 
-    <solid android:color="@color/red" />
+    <solid android:color="@color/colorPrimary" />
 </shape>
