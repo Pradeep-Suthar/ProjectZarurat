@@ -45,7 +45,7 @@ public class KhataDetailsActivity extends AppCompatActivity {
 
 
     int give=0,take=0;
-    static int sumAmount = 0;
+    int sumAmount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,10 @@ public class KhataDetailsActivity extends AppCompatActivity {
         imageViewShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT,"Your Final Anmount to give or take is Rs: ");
+                startActivity(Intent.createChooser(intent,"Share with"));
             }
         });
 
@@ -119,13 +122,34 @@ public class KhataDetailsActivity extends AppCompatActivity {
 
         findSum();
 
-        if(sumAmount<0){
-            textViewAmount.setText(""+sumAmount );
-            textViewAmount.setTextColor(getResources().getColor(R.color.colorRed));
-        }else{
-            textViewAmount.setText(""+sumAmount );
-            textViewAmount.setTextColor(getResources().getColor(R.color.colorGreenDark));
-        }
+        reference.child(mobileNo).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.d("1234", "5+.for dtasnap:amt "+dataSnapshot);
+                    KhataPojo khataPojo = dataSnapshot.getValue(KhataPojo.class);
+                    String amt = khataPojo.getFAmount();
+                    Log.d("1234", "data: "+amt);
+                    if(amt.charAt(0) == '-'){
+                        textViewAmount.setText("Rs :"+amt);
+                        textViewAmount.setTextColor(getResources().getColor(R.color.colorRed));
+
+                    }else if(amt.charAt(0)== '+'){
+                        textViewAmount.setText("Rs :"+amt );
+                        textViewAmount.setTextColor(getResources().getColor(R.color.colorGreenDark));
+                        Log.d("1234", "4+.for loop amt: "+amt);
+                    }
+                Log.d("1234", "5+.for loop:amt ");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+        });
+
+
+
 
         toolbar1.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,8 +157,6 @@ public class KhataDetailsActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        updateFAmount(sumAmount);
 
     }
 
@@ -168,20 +190,22 @@ public class KhataDetailsActivity extends AppCompatActivity {
                     }
                 }
                 Log.d("1234", "5+.for loop: "+sumAmount);
+                updateFAmount(sumAmount);
             }
-
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+
         });
+
     }
 
     public void updateFAmount(int x) {
         HashMap<String, Object> map = new HashMap<String, Object>();
         if(x<0){
-            map.put("famount", "-"+x);
+            map.put("famount", ""+x);
 
         }else{
             map.put("famount", "+"+x);
