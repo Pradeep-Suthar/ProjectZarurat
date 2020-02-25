@@ -3,15 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="56dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.JobFragment">
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerviewKhata1"
+        android:id="@+id/recyclerviewjob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/khatalayout1"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
 
@@ -25,6 +28,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_input_add" />
-
+<include layout="@layout/activity_jobnestedscrollview_activity"></include>
 
 </FrameLayout>
