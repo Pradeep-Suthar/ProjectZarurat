@@ -1,15 +1,15 @@
 package com.example.zarurat1.Activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.zarurat1.R;
 
-public class FoodService_Activity extends AppCompatActivity {
+public class LivingServiceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_service_);
+        setContentView(R.layout.activity_living_service);
     }
 }

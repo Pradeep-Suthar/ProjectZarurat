@@ -11,12 +11,11 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zarurat1.R;
 
-public class LivingService_Activity extends AppCompatActivity {
+public class LivingServiceProviderActivity extends AppCompatActivity {
     Spinner spinnercategory;
     ImageView imageView;
     EditText editTextprice;
@@ -27,7 +26,7 @@ public class LivingService_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_living_service_);
+        setContentView(R.layout.activity_living_service_provider);
      spinnercategory=findViewById(R.id.spinnertype);
      imageView=findViewById(R.id.livingplaceimage);
      editTextprice=findViewById(R.id.baseprice);
@@ -57,11 +56,11 @@ public class LivingService_Activity extends AppCompatActivity {
                     radioButton=findViewById(selectedId);
                     if(selectedId==-1)
                     {
-                        Toast.makeText(LivingService_Activity.this,"Nothing Selected in Radio Button",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LivingServiceProviderActivity.this,"Nothing Selected in Radio Button",Toast.LENGTH_SHORT).show();
                     }
                     else
                     {
-                        Toast.makeText(LivingService_Activity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LivingServiceProviderActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
                     }
             }
         });

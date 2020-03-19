@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.NearByServicesActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarNearbyservice"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_below="@+id/appBar"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+               android:weightSum="4"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgairport"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/airport"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Airport"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgAtm"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/atm"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="ATM Booth"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgBank"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/bank"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Bank"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgBakery"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/bakery"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Bakery"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="4"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgBar"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/house_csp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Bar"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgBook"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/book"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Book Store"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgBus"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/bus"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Bus Station"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgRental"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/rental"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Car Rental"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="4"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgRepair"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/repair"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Car Repair"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgWash"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/wash"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Car Wash"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgCoffee"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/coffee"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Coffee Shop"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgCloth"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/cloth"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Clothing Store"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="4"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgDentist"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/dentist"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Dentist"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgDoctor"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/doctor"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Doctor"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgElect"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/electronic"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Electronics Store"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgUniversity"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/university"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="University"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="4"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgFire"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/fire"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Fire Station"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgGas"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/house_csp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Gas Station"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgGovt"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/house_csp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Govt Office"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgGym"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/gym"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Gym"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="4"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgHospital"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/hospital"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Hospital"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgJwelery"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/jewelry"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Jwelery Store"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgLaundry"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/laundry"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Laundry"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgMall"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/mall"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Shopping Mall"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="4"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgMovie"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/movie"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Movie Theater"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgPark"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/park"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Park"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgPharmacy"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/pharmacy"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Pharmacy"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgPolice"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/police"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Police Nearby"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="4"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgPost"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/post"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Post Office"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgResturent"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/resturent"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Restaurent"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimg"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/house_csp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Living Services"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nearbyimgSchool"
+                        android:layout_margin="10dp"
+                        app:civ_border_width="1dp"
+                        android:elevation="5dp"
+                        app:civ_border_color="@color/colorWhite"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/school"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="School"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

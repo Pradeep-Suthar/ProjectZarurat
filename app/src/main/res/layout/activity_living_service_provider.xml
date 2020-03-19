@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:weightSum="2"
     android:orientation="vertical"
-    tools:context=".Activity.LivingService_Activity"
+    tools:context=".Activity.LivingServiceProviderActivity"
     android:background="@color/colorwhiteTran"
     >
     <Spinner

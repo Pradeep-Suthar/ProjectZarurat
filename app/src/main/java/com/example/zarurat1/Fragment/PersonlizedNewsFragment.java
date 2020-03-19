@@ -85,7 +85,6 @@ public class PersonlizedNewsFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         return view;
     }
 

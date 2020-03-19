@@ -13,10 +13,14 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activity.CoachingServicesActivity"></activity>
+        <activity android:name=".Activity.FoodServicesActivity" />
+        <activity android:name=".Activity.LivingServiceActivity" />
+        <activity android:name=".Activity.NearByServicesActivity" />
         <activity android:name=".Activity.JobService_Activity" />
-        <activity android:name=".Activity.CoachingService_Activity" />
-        <activity android:name=".Activity.FoodService_Activity" />
-        <activity android:name=".Activity.LivingService_Activity" />
+        <activity android:name=".Activity.CoachingServiceProviderActivity" />
+        <activity android:name=".Activity.FoodServiceProviderActivity" />
+        <activity android:name=".Activity.LivingServiceProviderActivity" />
         <activity android:name=".Activity.AddServiceCategory_activity" />
         <activity
             android:name=".Activity.ServiveProviderWelcomeActivity"
