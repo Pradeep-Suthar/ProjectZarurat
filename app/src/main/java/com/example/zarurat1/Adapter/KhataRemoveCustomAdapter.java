@@ -50,20 +50,6 @@ public class KhataRemoveCustomAdapter extends ArrayAdapter {
             }
         });
 
-       /* cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-                LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View view = layoutInflater.inflate(R.layout.news_onclick_item, null, false);
-                alertDialogBuilder.setView(view);
-                AlertDialog dialog=alertDialogBuilder.create();
-
-
-
-                dialog.show();
-            }
-        });*/
 
         return view;
 

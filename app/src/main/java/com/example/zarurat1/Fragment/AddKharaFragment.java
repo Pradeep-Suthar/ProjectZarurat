@@ -1,20 +1,19 @@
-package com.example.zarurat1.Activity;
+package com.example.zarurat1.Fragment;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.zarurat1.Fragment.KhataFragment;
 import com.example.zarurat1.Pojo.KhataPojo;
 import com.example.zarurat1.R;
 import com.google.firebase.database.DataSnapshot;
@@ -27,7 +26,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Calendar;
 import java.util.regex.Pattern;
 
-public class AddKhataMemberActivity extends AppCompatActivity {
+import static android.content.Context.MODE_PRIVATE;
+
+
+public class AddKharaFragment extends Fragment {
 
     EditText editTextName,editTextMobile,editTextEmail,editTextAmount,editTextDescription;
     Button buttonGive,buttonTake, buttonSave;
@@ -43,37 +45,24 @@ public class AddKhataMemberActivity extends AppCompatActivity {
             + "([0-9][0-9\\- \\.]+[0-9])");
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_khata_member);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view=  inflater.inflate(R.layout.fragment_add_khara, container, false);
 
-
-        Toolbar toolbar1 = findViewById(R.id.toolbarKhataAdd);
-        setSupportActionBar(toolbar1);
-        getSupportActionBar().setTitle("Add Member");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("khataInfo");
 
-        toolbar1.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
-
-
-        editTextName = findViewById(R.id.khataMembername);
-        editTextMobile = findViewById(R.id.khataMembermobile);
-        editTextEmail = findViewById(R.id.khataMemberEmail);
-        editTextAmount = findViewById(R.id.baseprice);
-        buttonGive = findViewById(R.id.buttonGive);
-        buttonTake = findViewById(R.id.buttonTake);
-        buttonSave = findViewById(R.id.buttonSave);
-        editTextDescription = findViewById(R.id.KhataDescription);
+        editTextName = view.findViewById(R.id.khataMembername);
+        editTextMobile = view.findViewById(R.id.khataMembermobile);
+        editTextEmail = view.findViewById(R.id.khataMemberEmail);
+        editTextAmount = view.findViewById(R.id.baseprice);
+        buttonGive = view.findViewById(R.id.buttonGive);
+        buttonTake = view.findViewById(R.id.buttonTake);
+        buttonSave = view.findViewById(R.id.buttonSave);
+        editTextDescription = view.findViewById(R.id.KhataDescription);
 
         buttonGive.setOnClickListener(clik);
         buttonTake.setOnClickListener(clik);
@@ -86,11 +75,13 @@ public class AddKhataMemberActivity extends AppCompatActivity {
                     save();
                 }
                 else{
-                    Toast.makeText(AddKhataMemberActivity.this, "Please select amount type", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Please select amount type", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+
+        return view;
     }
     public View.OnClickListener clik = new View.OnClickListener() {
         @Override
@@ -113,7 +104,7 @@ public class AddKhataMemberActivity extends AppCompatActivity {
     };
 
     public void save() {
-        final ProgressDialog progressDialog = new ProgressDialog(AddKhataMemberActivity.this);
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setTitle("Please Wait...");
         progressDialog.setCancelable(false);
         progressDialog.show();
@@ -136,7 +127,7 @@ public class AddKhataMemberActivity extends AppCompatActivity {
         final String description=editTextDescription.getText().toString();
 
 
-        SharedPreferences sharedPreferences=getSharedPreferences("myprf",MODE_PRIVATE);
+        SharedPreferences sharedPreferences=getActivity().getSharedPreferences("myprf",MODE_PRIVATE);
         final String name1=sharedPreferences.getString("name",null);
         final String mobile1=sharedPreferences.getString("mobile",null);
 
@@ -191,10 +182,12 @@ public class AddKhataMemberActivity extends AppCompatActivity {
                         khataPojo.setDescription(description);
                         databaseReference.child(name1+mobile1).child(mobile).setValue(khataPojo);
                         progressDialog.cancel();
-                        Toast.makeText(AddKhataMemberActivity.this, "Registration Successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(AddKhataMemberActivity.this, KhataFragment.class);
-                        startActivity(intent);
-
+                        Toast.makeText(getContext(), "Member Added Successfully", Toast.LENGTH_SHORT).show();
+                        editTextName.setText(null);
+                        editTextMobile.setText(null);
+                        editTextEmail.setText(null);
+                        editTextAmount.setText(null);
+                        editTextDescription.setText(null);
                     }
                 }
 
@@ -206,7 +199,6 @@ public class AddKhataMemberActivity extends AppCompatActivity {
         }
 
 
-
-
     }
+
 }

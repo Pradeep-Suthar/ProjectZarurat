@@ -10,6 +10,6 @@ public class CoachingServicesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coachin_services);
+        setContentView(R.layout.activity_coaching_services);
     }
 }

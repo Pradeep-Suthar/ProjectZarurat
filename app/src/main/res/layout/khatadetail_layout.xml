@@ -12,90 +12,84 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="2dp"
         android:layout_width="match_parent"
         android:layout_height="85dp">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:weightSum="2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/imageKhataName"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/shapecircle"
-                android:text="N"
-                android:layout_margin="10dp"
-                android:textAlignment="center"
-                android:textColor="#F7F1F1"
-                android:textSize="40dp" />
-
             <LinearLayout
-                android:orientation="vertical"
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="0dp">
+
 
                 <TextView
+                    android:gravity="center"
+                    android:layout_gravity="center"
                     android:textStyle="bold"
                     android:textColor="@color/colorBlack"
                     android:id="@+id/textkhataName"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="3dp"
-                    android:layout_marginTop="5dp"
-                    android:textSize="18dp"
+                    android:textSize="20sp"
                     android:text="Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <TextView
-                    android:textColor="@color/colorBlackTrans"
-                    android:id="@+id/textkhataEmail"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="3dp"
-                    android:textSize="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
-                <LinearLayout
-                    android:weightSum="2"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            </LinearLayout>
 
-                    <TextView
-                        android:layout_weight="1"
-                        android:textColor="@color/colorBlackTrans"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginTop="3dp"
-                        android:textSize="18dp"
-                        android:fontFamily="sans-serif"
-                        android:text="Amount -"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:weightSum="3"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
 
-                    <TextView
-                        android:textStyle="bold"
-                        android:layout_weight="1"
-                        android:id="@+id/textkhataAmount"
-                        android:layout_width="0dp"
-                        android:textAlignment="textEnd"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginRight="15dp"
-                        android:text="Rs 300"
-                        android:fontFamily=""
-                        android:textColor="@color/colorRed"
-                        android:textSize="18dp" />
+                <Button
+                    android:id="@+id/btnSendAmt"
+                    android:layout_margin="5dp"
+                    android:background="@color/colorGreen"
+                    android:text="Send"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp" />
 
-                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnRecieve"
+                    android:layout_margin="5dp"
+                    android:background="@color/colorRed"
+                    android:text="Recieve"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp" />
+
+                <Button
+                    android:id="@+id/btnDetails"
+                    android:layout_margin="5dp"
+                    android:background="@color/colorPrimary"
+                    android:text="Details"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp" />
 
 
 

@@ -18,4 +18,18 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_servive_provider_welcome">ServiveProviderWelcomeActivity</string>
+
+    <string-array name="amt_option">
+
+        <item>Select Amount Mode</item>
+        <item>Cash</item>
+        <item>Net Banking</item>
+        <item>Paytm</item>
+        <item>Phonepe</item>
+        <item>G-Pay</item>
+        <item>UPI</item>
+
+    </string-array>
+
+
 </resources>

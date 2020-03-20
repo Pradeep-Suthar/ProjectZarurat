@@ -1,10 +1,11 @@
 package com.example.zarurat1.Adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.zarurat1.Pojo.KhataPojo;
@@ -12,71 +13,57 @@ import com.example.zarurat1.R;
 
 import java.util.ArrayList;
 
-public class KhataAmountCustomAdapter extends RecyclerView.Adapter<KhataAmountCustomAdapter.ViewHolder>{
+public class KhataAmountCustomAdapter extends ArrayAdapter {
 
-    private ArrayList<KhataPojo> values;
-    private Context context;
-    private View v;
+    Context context;
+    int resource;
+    ArrayList<KhataPojo> arrayList;
 
-    public KhataAmountCustomAdapter(Context context, ArrayList<KhataPojo> myDataset) {
-        values = myDataset;
+    public KhataAmountCustomAdapter(Context context, int resource, ArrayList<KhataPojo> arrayList) {
+        super(context, resource, arrayList);
+        Log.d("12345", "NewsCustomAdapter:"+context.toString());
         this.context = context;
+        this.resource = resource;
+        this.arrayList = arrayList;
+
     }
 
-
     @Override
-    public KhataAmountCustomAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        v = inflater.inflate(R.layout.khataamountdetail_layout, parent, false);
-        KhataAmountCustomAdapter.ViewHolder vh = new KhataAmountCustomAdapter.ViewHolder(v);
-        return vh;
-    }
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
-    // Replace the contents of a view (invoked by the layout manager)
-    @Override
-    public void onBindViewHolder(KhataAmountCustomAdapter.ViewHolder holder, final int position) {
-        final KhataPojo myPojo = values.get(position);
-        holder.description.setText(myPojo.getDescription());
-        String data_time=myPojo.getDate()+" "+myPojo.getTime();
-        holder.dateTime.setText(data_time);
-        String amountcheck =myPojo.getFAmount();
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = layoutInflater.inflate(resource, null,false);
+
+        TextView dateTime = view.findViewById(R.id.tvkhataDateTime);
+        TextView description = view.findViewById(R.id.tvDescriptionF);
+        TextView textAmountSend = view.findViewById(R.id.tvAmountSend);
+        TextView textAmountRecieve = view.findViewById(R.id.tvAmountRecieve);
+
+
+        KhataPojo khataPojo = arrayList.get(position);
+        Log.d("1234", "getView: "+ arrayList.size());
+        Log.d("1234", "getView: "+ khataPojo.getDate());
+        Log.d("1234", "getView: "+ khataPojo.getDescription());
+
+        dateTime.setText(khataPojo.getDate()+"-"+khataPojo.getTime());
+        description.setText(khataPojo.getDescription());
+
+        String amountcheck =khataPojo.getFAmount();
 
         if(amountcheck.charAt(0)=='-'){
-            holder.textAmountred.setText("Rs "+amountcheck.substring(1));
-            holder.textAmountred.setTextColor(v.getResources().getColor(R.color.colorRed));
-            holder.textAmountGreen.setVisibility(View.INVISIBLE);
+            textAmountRecieve.setText("Rs "+amountcheck.substring(1));
+            textAmountRecieve.setTextColor(view.getResources().getColor(R.color.colorRed));
+            textAmountSend.setVisibility(View.INVISIBLE);
         }
         else{
-            holder.textAmountGreen.setText("Rs "+amountcheck.substring(1));
-            holder.textAmountGreen.setTextColor(v.getResources().getColor(R.color.colorGreenDark));
-            holder.textAmountred.setVisibility(View.INVISIBLE);
+            textAmountSend.setText("Rs "+amountcheck.substring(1));
+            textAmountSend.setTextColor(view.getResources().getColor(R.color.colorGreenDark));
+            textAmountRecieve.setVisibility(View.INVISIBLE);
         }
 
 
+        return view;
+
     }
-
-    // Return the size of your dataset (invoked by the layout manager)
-    @Override
-    public int getItemCount() {
-        return values.size();
-    }
-
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
-        public TextView dateTime;
-        public TextView description;
-        public TextView textAmountred;
-        public TextView textAmountGreen;
-        public ViewHolder(View v) {
-            super(v);
-            dateTime = v.findViewById(R.id.textkhataDateTime);
-            description = v.findViewById(R.id.textkhataDescriptionF);
-            textAmountred=v.findViewById(R.id.textkhataAmountRed);
-            textAmountGreen = v.findViewById(R.id.textkhataAmountGreen);
-
-        }
-    }
-
 
 }

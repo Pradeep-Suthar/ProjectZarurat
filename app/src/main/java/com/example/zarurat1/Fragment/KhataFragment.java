@@ -1,42 +1,20 @@
 package com.example.zarurat1.Fragment;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-import com.example.zarurat1.Activity.AddKhataMemberActivity;
-import com.example.zarurat1.Activity.RemoveKhataMemberActivity;
-import com.example.zarurat1.Adapter.KataPersonCustomAdapter;
-import com.example.zarurat1.Pojo.KhataPojo;
 import com.example.zarurat1.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class KhataFragment extends Fragment {
-    CardView cardViewAddKhata, cardViewRemoveKhata;
-    RecyclerView recyclerViewKhata;
-    private RecyclerView.LayoutManager layoutManager;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    RecyclerView.Adapter adapter;
-    ArrayList<KhataPojo> arrayList = new ArrayList<KhataPojo>();
+    FrameLayout AddKhata, len_den,RemoveKhata;
+    View view1, view2,view3;
+    TextView tvAddKhata, tvLen_den,tvRemoveKhata;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,66 +22,108 @@ public class KhataFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_khata, container, false);
 
-        cardViewAddKhata=view.findViewById(R.id.cardAddKhata);
-        cardViewRemoveKhata=view.findViewById(R.id.cardRemoveKhata);
-        recyclerViewKhata=view.findViewById(R.id.recyclerviewKhata1);
 
-        recyclerViewKhata.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this.getContext());
-        recyclerViewKhata.setLayoutManager(layoutManager);
+        init(view);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("khataInfo");
+        //SET TABS ONCLICK
+        AddKhata.setOnClickListener(clik);
+        RemoveKhata.setOnClickListener(clik);
+        len_den.setOnClickListener(clik);
 
-        cardViewAddKhata.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), AddKhataMemberActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        cardViewRemoveKhata.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), RemoveKhataMemberActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        getDataofKhata();
+        //LOAD PAGE FOR FIRST
+        loadPage(new Len_DenFragment());
+        tvLen_den.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
+        len_den.setBackgroundColor(getActivity().getResources().getColor(R.color.colorWhite));
 
 
         return view;
     }
 
+    public void init(View v){
+        AddKhata = v.findViewById(R.id.fragAddKhata);
+        len_den = v.findViewById(R.id.fraglen_den);
+        RemoveKhata = v.findViewById(R.id.fragKhataRemove);
+        view1 = v.findViewById(R.id.khataview_1);
+        view2 = v.findViewById(R.id.khataview_2);
+        view3= v.findViewById(R.id.khataview_3);
+        tvRemoveKhata = v.findViewById(R.id.tvKhataRemove);
+        tvLen_den= v.findViewById(R.id.tvlen_den);
+        tvAddKhata= v.findViewById(R.id.tvAddKhata);
+    }
 
-    public void getDataofKhata() {
-        SharedPreferences sharedPreferences=getContext().getSharedPreferences("myprf",MODE_PRIVATE);
-        final String name1=sharedPreferences.getString("name",null);
-        final String mobile1=sharedPreferences.getString("mobile",null);
+    //ONCLICK LISTENER
+    public View.OnClickListener clik = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.fragAddKhata:
+                    //ONSELLER CLICK
+                    //LOAD SELLER FRAGMENT CLASS
+                    loadPage(new AddKharaFragment());
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    //WHEN CLICK TEXT COLOR CHANGED
+                    tvAddKhata.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    tvLen_den.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    tvRemoveKhata.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    AddKhata.setBackgroundColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    len_den.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    RemoveKhata.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    //VIEW VISIBILITY WHEN CLICKED
+                    view1.setVisibility(View.VISIBLE);
+                    view2.setVisibility(View.INVISIBLE);
+                    view3.setVisibility(View.INVISIBLE);
+                    break;
+                case R.id.fraglen_den:
+                    //ONBUYER CLICK
+                    //LOAD BUYER FRAGMENT CLASS
+                    loadPage(new Len_DenFragment());
 
-                arrayList.clear();
-                Log.d("1234", "onDataChange: ref ");
-                for (DataSnapshot dataSnapshot1:dataSnapshot.child(name1+mobile1).getChildren()){
-                    Log.d("1234", "onDataChange: for "+dataSnapshot1);
-                    KhataPojo khataPojo = dataSnapshot1.getValue(KhataPojo.class);
-                    arrayList.add(khataPojo);
-                }
-                Log.d("1234", "onDataChange: "+arrayList.size());
-                adapter = new KataPersonCustomAdapter(getActivity(), arrayList);
-                recyclerViewKhata.setAdapter(adapter);
+                    //WHEN CLICK TEXT COLOR CHANGED
+                    tvLen_den.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    tvAddKhata.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    tvRemoveKhata.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    len_den.setBackgroundColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    AddKhata.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    RemoveKhata.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
+
+                    //VIEW VISIBILITY WHEN CLICKED
+                    view1.setVisibility(View.INVISIBLE);
+                    view2.setVisibility(View.VISIBLE);
+                    view3.setVisibility(View.INVISIBLE);
+                    break;
+                case R.id.fragKhataRemove:
+                    //ONBUYER CLICK
+                    //LOAD BUYER FRAGMENT CLASS
+                    loadPage(new RemoveKhataFragment());
+
+                    //WHEN CLICK TEXT COLOR CHANGED
+                    tvRemoveKhata.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    tvAddKhata.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    tvLen_den.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    RemoveKhata.setBackgroundColor(getActivity().getResources().getColor(R.color.colorWhite));
+                    AddKhata.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
+                    len_den.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
+
+                    //VIEW VISIBILITY WHEN CLICKED
+                    view1.setVisibility(View.INVISIBLE);
+                    view3.setVisibility(View.VISIBLE);
+                    view2.setVisibility(View.INVISIBLE);
+                    break;
             }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getActivity(), "Database Error", Toast.LENGTH_SHORT).show();
-            }
-        });
+        }
+    };
 
+    //LOAD PAGE FRAGMENT METHOD
+    private boolean loadPage(Fragment fragment) {
+
+        if (fragment != null) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.containerPage, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
 }

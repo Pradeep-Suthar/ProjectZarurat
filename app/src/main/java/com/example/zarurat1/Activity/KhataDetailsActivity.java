@@ -1,34 +1,18 @@
 package com.example.zarurat1.Activity;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.zarurat1.Adapter.KhataAmountCustomAdapter;
 import com.example.zarurat1.Pojo.KhataPojo;
-import com.example.zarurat1.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
 
 public class KhataDetailsActivity extends AppCompatActivity {
 
@@ -50,7 +34,7 @@ public class KhataDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_khata_details);
+     /*   setContentView(R.layout.activity_khata_details);
 
         Toolbar toolbar1 = findViewById(R.id.toolbarKhataDetails);
         setSupportActionBar(toolbar1);
@@ -239,8 +223,8 @@ public class KhataDetailsActivity extends AppCompatActivity {
                     arrayList.add(khataPojo);
                 }
                 Log.d("1234", "onDataChange: " + arrayList.size());
-                adapter = new KhataAmountCustomAdapter(KhataDetailsActivity.this, arrayList);
-                recyclerViewAmount.setAdapter(adapter);
+              //  adapter = new KhataAmountCustomAdapter(KhataDetailsActivity.this, arrayList);
+               // recyclerViewAmount.setAdapter(adapter);
             }
 
             @Override
@@ -323,6 +307,6 @@ public class KhataDetailsActivity extends AppCompatActivity {
             editTextAmount.setText(null);
             editTextDescription.setText(null);
 
-        }
+        }*/
     }
 }
